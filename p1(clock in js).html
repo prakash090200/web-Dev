@@ -9,6 +9,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <title>Hello, world!</title>
+    <style>
+        .display-4 {
+           color:red;
+           font-size: 10px;
+        }
+    </style>
   </head>
   <body>
     <ul class="nav">
@@ -37,11 +43,12 @@
           var d;
           var time;
           var store;
+          const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
           setInterval (() => {
           d=new Date();
-          time=d.toLocaleDateString();
+          time=d.toLocaleDateString(undefined,options);
           store=d.getHours()+" : "+d.getMinutes()+" : "+d.getSeconds();
-          document.getElementById('time').innerHTML=time+" on "+store;
+          document.getElementById('time').innerHTML=time+" <br> on  "+store;
           },1000);
       </script>
 
