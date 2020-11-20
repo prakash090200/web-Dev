@@ -98,20 +98,17 @@
           itemjsonStr=localStorage.getItem("itemjson");
              itemjsonArray =JSON.parse([itemjsonStr]);
         }
-      
-      mytable=document.getElementById("mytable");
-      var str="";
-      itemjsonArray.forEach((element,index) => {
+       mytable=document.getElementById("mytable");
+       var str="";
+       itemjsonArray.forEach((element,index) => {
         str+=`
         <tr>
         <th scope="row">${index + 1}</th>
         <td>${element[0]}</td>
         <td>${element[1]}</td>
         <td><button type="button" class="btn btn-primary" onclick="deleted(${index})">Delete</button></td>
-      </tr>
-        `;
-      
-      });
+      </tr> `;
+        });
       mytable.innerHTML=str;
      }
       add=document.getElementById("add");
