@@ -79,8 +79,7 @@
              itemjsonArray =[];
              itemjsonArray.push([item,desc]);
              localStorage.setItem("itemjson",JSON.stringify(itemjsonArray));
-
-           }
+            }
            else{
             itemjsonStr=localStorage.getItem("itemjson");
              itemjsonArray =JSON.parse([itemjsonStr]);
@@ -101,8 +100,7 @@
        mytable=document.getElementById("mytable");
        var str="";
        itemjsonArray.forEach((element,index) => {
-        str+=`
-        <tr>
+        str+=` <tr>
         <th scope="row">${index + 1}</th>
         <td>${element[0]}</td>
         <td>${element[1]}</td>
@@ -123,8 +121,10 @@
             update();
         }
       function cleared(){
+        if(confirm("Do u really want to clear?")){
         localStorage.clear();
         update();
+      }
       }
     </script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
