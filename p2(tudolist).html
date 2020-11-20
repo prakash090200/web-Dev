@@ -32,16 +32,14 @@
 
 <div class="container my-4">
   <div class="form-group my-4">
-    <label for="exampleInputEmail1">ItemTitle</label>
+    <label for="item">ItemTitle</label>
     <input type="email" class="form-control" id="item" aria-describedby="emailHelp">
     <small id="emailHelp" class="form-text text-muted">Add item</small>
   </div>
   <div class="form-group">
-    <label for="exampleFormControlTextarea1">Textarea</label>
+    <label for="desc">Textarea</label>
     <textarea class="form-control" id="desc" rows="3"></textarea>
   </div>
-  
-
   </div>
   <div class="container my-4">
   <button type="submit" id="add" class="btn btn-primary ">Add item</button>
@@ -76,12 +74,18 @@
       add.addEventListener("click",()=>{
         console.log("update.....");
         item=document.getElementById("item").value;
-        des=document.getElementById("desc").value;
+        desc=document.getElementById("desc").value;
            if(localStorage.getItem("itemjson")==null){
              itemjsonArray =[];
-             itemjsonArray.push(item,desc);
-             itemjson=localStorage.setItem("itemjson",JSON.stringify(itemjsonArray));
+             itemjsonArray.push([item,desc]);
+             localStorage.setItem("itemjson",JSON.stringify(itemjsonArray));
 
+           }
+           else{
+            itemjsonStr=localStorage.getItem("itemjson");
+             itemjsonArray =JSON.parse([itemjsonStr]);
+             itemjsonArray.push(item,desc);
+             localStorage.setItem("itemjson",JSON.stringify(itemjsonArray));
            }
       });
     </script>
