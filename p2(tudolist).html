@@ -32,13 +32,13 @@
 <form class="container my-20">
     <div class="form-group my-20">
       <label for="exampleInputEmail1">Items</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <input type="email" class="form-control" id="item" aria-describedby="emailHelp">
       <small id="emailHelp" class="form-text text-muted">Add items to list.</small>
     </div>
     <div class="form-group">
         <div class="form-group">
             <label for="exampleFormControlTextarea1">Decription of Item</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <textarea class="form-control" id="desc" rows="3"></textarea>
           </div>
     
     <button type="submit" class="btn btn-primary">Add items</button>
@@ -50,6 +50,7 @@
         <th scope="col">Sno</th>
         <th scope="col">Title</th>
         <th scope="col">Description</th>
+        <th scope="col">Delete</th>
       </tr>
     </thead>
     <tbody>
@@ -57,7 +58,7 @@
         <th scope="row">1</th>
         <td>Mark</td>
         <td>Otto</td>
-        <td>@mdo</td>
+        <td><button type="button" class="btn btn-primary">Delete</button></td>
       </tr>
      
     </tbody>
