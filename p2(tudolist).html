@@ -84,7 +84,7 @@
            else{
             itemjsonStr=localStorage.getItem("itemjson");
              itemjsonArray =JSON.parse([itemjsonStr]);
-             itemjsonArray.push(item,desc);
+             itemjsonArray.push([item,desc]);
              localStorage.setItem("itemjson",JSON.stringify(itemjsonArray));
            }
       
