@@ -5,26 +5,20 @@ update();
 
 function perform() {
     console.log(2);
-     doc = document.getElementById('ta').value;
-     document.getElementById('ta').value='';   //// to reset the value of text area
+     doc = document.getElementById('ta').value; 
     if (localStorage.getItem('note') == null) {
         notearray = [];
-        if(Validate()){
         notearray.push([doc]);
-       show("success","You book is added to our library succesfully");
-        }
-        else{
-            show("danger","Please Enter the details before adding"); 
-        }
         localStorage.setItem('note', JSON.stringify(notearray));
     }
     else {
          items = localStorage.getItem('note');
+         
         notearray = JSON.parse([items]);
         notearray.push([doc]);
         localStorage.setItem('note', JSON.stringify(notearray));
     }
-    
+    document.getElementById('ta').value='';//// to reset the value of text area
     update();
 }
 function update() {
@@ -77,8 +71,8 @@ element.style.display="none";
 });
 
 }
-
-show(alert,message){
+/*
+function show(alert,message){
     let mess=document.getElementById('messaged');
     let boldtext;
     if(alert==='success'){
@@ -98,3 +92,11 @@ show(alert,message){
     },3000);
 }
 
+function validate(){
+    let txt=document.getElementById('ta').value;
+    if(txt.length<2)
+    return false;
+    else
+    return true;
+}
+*/

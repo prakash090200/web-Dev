@@ -71,7 +71,7 @@ function formsubmit(e){
       console.log("helo1");
       let display=new Display();
       if(display.validate(book)){
-          console.log('enter');
+          //console.log('enter');
         display.added(book);
         display.cleared();
         display.show("success","You book is added to our library succesfully");
