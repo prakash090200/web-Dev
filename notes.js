@@ -36,7 +36,7 @@ function update() {
     notearray.forEach((element, index) => {
          str+=`<div class="card my-3 mx-3" style="width: 18rem;">
                     <div class="card-body ">
-                    <h5 class="card-title">Card title</h5>
+                    <h5 class="card-title">Note ${index+1}</h5>
                     <p class="card-text">${element}</p>
                     <a href="#" id="${index}"class="btn btn-primary" onclick="deleted(this.id)">Delete</a>
                     </div>
