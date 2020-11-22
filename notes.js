@@ -45,3 +45,26 @@ function update() {
     });
     d.innerHTML = str;
 }
+function deleted(value){
+item=localStorage.getItem('note');
+notearray=JSON.parse(item);
+notearray.splice(value,1);
+localStorage.setItem('note',JSON.stringify(notearray));
+update();
+}
+
+//// search in seach bar
+let searchtxt=document.getElementById('searchtxt');
+searchtxt.addEventListener('input',searchnow);
+function searchnow(){
+let inputtxt=searchtxt.value.toLowerCase();
+let card=document.getElementsByClassName('card');
+Array.from(card).forEach(element=>{
+let cardtxt=element.getElementsByTagName('p')[0].innerHTML;
+if(cardtxt.includes(inputtxt)){
+element.style.display="block";
+}
+else
+element.style.display="none";
+});
+}
