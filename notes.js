@@ -9,7 +9,13 @@ function perform() {
      document.getElementById('ta').value='';   //// to reset the value of text area
     if (localStorage.getItem('note') == null) {
         notearray = [];
+        if(Validate()){
         notearray.push([doc]);
+       show("success","You book is added to our library succesfully");
+        }
+        else{
+            show("danger","Please Enter the details before adding"); 
+        }
         localStorage.setItem('note', JSON.stringify(notearray));
     }
     else {
@@ -60,7 +66,6 @@ searchtxt.addEventListener("input",searchnow);
 function searchnow(){
     
 let inputtxt=searchtxt.value.toLowerCase();
-//console.log(inputtxt);
 let card=document.getElementsByClassName('notecard');
 Array.from(card).forEach(element=>{
 let cardtxt=element.getElementsByTagName('p')[0].innerHTML;
@@ -72,3 +77,24 @@ element.style.display="none";
 });
 
 }
+
+show(alert,message){
+    let mess=document.getElementById('messaged');
+    let boldtext;
+    if(alert==='success'){
+    boldtext='Success';
+    }
+    else{
+    boldtext='!Error';
+    }
+    mess.innerHTML= ` <div class="alert alert-${alert} alert-dismissible fade show" role="alert">
+                            <strong>${boldtext} : </strong>${message}.
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                      </div> `;
+    setTimeout(()=>{
+       mess.innerHTML='';
+    },3000);
+}
+
