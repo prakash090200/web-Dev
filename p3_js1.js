@@ -21,6 +21,24 @@ class Display{
        let doc=document.getElementById('libraryForm');
         doc.reset();
     }
+    validate(book){
+        if(book.name.length<2 || book.author.length<2)
+        return false;
+        else
+        return true;
+    }
+    show(alert,message){
+        let mess=document.getElementById('messaged');
+        mess.innerHTML= ` <div class="alert alert-${alert} alert-dismissible fade show" role="alert">
+                                <strong>Message: </strong>${message}.
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                          </div> `;
+        setTimeout(()=>{
+           mess.innerHTML='';
+        },3000);
+    }
 }
 let libraryForm=document.getElementById('libraryForm');
 libraryForm.addEventListener('submit',formsubmit);
@@ -45,10 +63,18 @@ function formsubmit(e){
       let book=new Book(name,author,type);
       console.log("helo1");
       let display=new Display();
-      display.added(book);
-      e.preventDefault();    // everytime we submit the form it 
-                            // get refresh to prevent that we can use preventDefault();
-      display.cleared();
+      if(display.validate(book)){
+          console.log('enter');
+        display.added(book);
+        display.cleared();
+        display.show("success","You book is added to our library succesfully");
+                                                                                                               
+      }
+      else{
+          display.show("danger","Please Enter the details before adding");
+      }
+      e.preventDefault();
+      
 
      
     
