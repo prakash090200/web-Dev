@@ -29,8 +29,15 @@ class Display{
     }
     show(alert,message){
         let mess=document.getElementById('messaged');
+        let boldtext;
+        if(alert==='success'){
+        boldtext='Success';
+        }
+        else{
+        boldtext='!Error';
+        }
         mess.innerHTML= ` <div class="alert alert-${alert} alert-dismissible fade show" role="alert">
-                                <strong>Message: </strong>${message}.
+                                <strong>${boldtext} : </strong>${message}.
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                                 </button>
