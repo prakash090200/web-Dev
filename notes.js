@@ -34,7 +34,7 @@ function update() {
     }
     var str="";
     notearray.forEach((element, index) => {
-         str+=`<div class="card my-3 mx-3" style="width: 18rem;">
+         str+=`<div class=" notecard card my-3 mx-3" style="width: 18rem;">
                     <div class="card-body ">
                     <h5 class="card-title">Note ${index+1}</h5>
                     <p class="card-text">${element}</p>
@@ -50,15 +50,18 @@ item=localStorage.getItem('note');
 notearray=JSON.parse(item);
 notearray.splice(value,1);
 localStorage.setItem('note',JSON.stringify(notearray));
+
 update();
 }
 
 //// search in seach bar
 let searchtxt=document.getElementById('searchtxt');
-searchtxt.addEventListener('input',searchnow);
+searchtxt.addEventListener("input",searchnow);
 function searchnow(){
+    
 let inputtxt=searchtxt.value.toLowerCase();
-let card=document.getElementsByClassName('card');
+//console.log(inputtxt);
+let card=document.getElementsByClassName('notecard');
 Array.from(card).forEach(element=>{
 let cardtxt=element.getElementsByTagName('p')[0].innerHTML;
 if(cardtxt.includes(inputtxt)){
@@ -67,4 +70,5 @@ element.style.display="block";
 else
 element.style.display="none";
 });
+
 }
