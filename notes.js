@@ -13,7 +13,7 @@ function perform() {
         show("success","You book is added to our library succesfully");
         }
         else {
-            show("danger","Please Enter the details before adding");
+        show("danger","Please Enter the details before adding");
         }
         
         localStorage.setItem('note', JSON.stringify(notearray));
