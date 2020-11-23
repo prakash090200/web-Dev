@@ -8,14 +8,27 @@ function perform() {
      doc = document.getElementById('ta').value; 
     if (localStorage.getItem('note') == null) {
         notearray = [];
+        if(validate(doc)){
         notearray.push([doc]);
+        show("success","You book is added to our library succesfully");
+        }
+        else {
+            show("danger","Please Enter the details before adding");
+        }
+        
         localStorage.setItem('note', JSON.stringify(notearray));
     }
     else {
          items = localStorage.getItem('note');
          
         notearray = JSON.parse([items]);
-        notearray.push([doc]);
+        if(validate(doc)){
+            notearray.push([doc]);
+            show("success","You book is added to our library succesfully");
+            }
+            else {
+                show("danger","Please Enter the details before adding");
+            }
         localStorage.setItem('note', JSON.stringify(notearray));
     }
     document.getElementById('ta').value='';//// to reset the value of text area
@@ -57,8 +70,8 @@ update();
 //// search in seach bar
 let searchtxt=document.getElementById('searchtxt');
 searchtxt.addEventListener("input",searchnow);
+
 function searchnow(){
-    
 let inputtxt=searchtxt.value.toLowerCase();
 let card=document.getElementsByClassName('notecard');
 Array.from(card).forEach(element=>{
@@ -69,9 +82,8 @@ element.style.display="block";
 else
 element.style.display="none";
 });
-
 }
-/*
+
 function show(alert,message){
     let mess=document.getElementById('messaged');
     let boldtext;
@@ -92,11 +104,10 @@ function show(alert,message){
     },3000);
 }
 
-function validate(){
-    let txt=document.getElementById('ta').value;
-    if(txt.length<2)
+function validate(doc){
+   // let txt=document.getElementById('ta').value;
+    if(doc.length<2)
     return false;
     else
     return true;
 }
-*/
