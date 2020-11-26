@@ -70,62 +70,7 @@
   </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script>
-      function addit(){
-        console.log("update.....");
-        item=document.getElementById("item").value;
-        desc=document.getElementById("desc").value;
-           if(localStorage.getItem("itemjson")==null){
-             itemjsonArray =[];
-             itemjsonArray.push([item,desc]);
-             localStorage.setItem("itemjson",JSON.stringify(itemjsonArray));
-            }
-           else{
-            itemjsonStr=localStorage.getItem("itemjson");
-             itemjsonArray =JSON.parse([itemjsonStr]);
-             itemjsonArray.push([item,desc]);
-             localStorage.setItem("itemjson",JSON.stringify(itemjsonArray));
-           }
-           update();
-      }
-      function update(){
-        if(localStorage.getItem("itemjson")==null){
-             itemjsonArray =[];
-             localStorage.setItem("itemjson",JSON.stringify(itemjsonArray));
-        }
-        else{
-          itemjsonStr=localStorage.getItem("itemjson");
-             itemjsonArray =JSON.parse([itemjsonStr]);
-        }
-       mytable=document.getElementById("mytable");
-       var str="";
-       itemjsonArray.forEach((element,index) => {
-        str+=` <tr>
-        <th scope="row">${index + 1}</th>
-        <td>${element[0]}</td>
-        <td>${element[1]}</td>
-        <td><button type="button" class="btn btn-primary" onclick="deleted(${index})">Delete</button></td>
-      </tr> `;
-        });
-      mytable.innerHTML=str;
-     }
-      add=document.getElementById("add");
-      add.addEventListener("click",addit);
-      update();
-      function deleted(itemindex){
-        console.log("delete",itemindex);
-          itemjsonStr=localStorage.getItem("itemjson");
-             itemjsonArray =JSON.parse([itemjsonStr]);
-             itemjsonArray.splice(itemindex,1);
-             localStorage.setItem("itemjson",JSON.stringify(itemjsonArray));
-            update();
-        }
-      function cleared(){
-        if(confirm("Do u really want to clear?")){
-        localStorage.clear();
-        update();
-      }
-      }
+    <script src="tudolist.js">
     </script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
