@@ -11,7 +11,7 @@
             padding:0;
             box-sizing:border-box;
         }
-        .container{
+        .sky{
             width:100%;
             height:100vh;
             background:url('images/sky.jpg');
@@ -19,24 +19,44 @@
             position:relative;
             
         }
-        .container2{
+        .road{
              width:100%;
-             height:28vh;
+             height:24vh;
              position:absolute;
              left:0;
              right:0;
              bottom:0;
              background: url('images/road.jpg');
+             animation:road 2s linear infinite;
+             background-repeat: repeat-x;
         }
-        .comntainer3{
-            
+        .city{
+            width:100%;
+             height:35vh;
+             position:absolute;
+             background: url('images/city.png');
+             left:0;
+             right:0;
+             bottom:24vh;
         }
+        .car{
+               width:150px;
+               height:20vh;
+               background: url('images/car.png');
+               background-size: 150px 18vh;
+               background-repeat: no-repeat;
+               position:absolute;
+               bottom:8vh;
+               left:69vh;
+        }
+        
     
 </style>
 <body>
-<div class="container">
-    <div class="container2"> </div>
-    <div class="container3"> </div>
+<div class="sky">
+    <div class="road"> </div>
+    <div class="city"> </div>
+    <div class="car">  </div>
 </div>
 </body>
 </html>
