@@ -11,6 +11,9 @@
             padding:0;
             box-sizing:border-box;
         }
+        body{
+            overflow: hidden;
+        }
         .sky{
             width:100%;
             height:100vh;
@@ -20,7 +23,7 @@
             
         }
         .road{
-             width:100%;
+             width:800vw;
              height:24vh;
              position:absolute;
              left:0;
@@ -29,42 +32,85 @@
              background: url('images/road.jpg');
              animation:road 2s linear infinite;
              background-repeat: repeat-x;
+             animation: road 5s linear infinite;
+        }
+        @keyframes road{
+            100%{
+                transform:translateX(-500vw)
+            }
         }
         .city{
-            width:100%;
+            width:800vw;
              height:35vh;
              position:absolute;
              background: url('images/city.png');
              left:0;
              right:0;
              bottom:24vh;
+             animation: city 20s linear infinite;
+        }
+        @keyframes city{
+            100%{
+                transform:translateX(-500vw)
+            }
+
         }
         .car{
-               width:150px;
+               width:250px;
                height:20vh;
                background: url('images/car.png');
-               background-size: 150px 18vh;
+               background-size: 250px 18vh;
                background-repeat: no-repeat;
                position:absolute;
                bottom:8vh;
                left:69vh;
+               animation:carshake .4s linear infinite;
+
+        }
+        @keyframes carshake{
+            0%{
+                transform: translateY(-2px);
+            }
+            50%{
+                transform: translateY(2px);
+            }
+            100%{
+                transform: translateY(-2px);
+            }
         }
         .tier1{
-            width: 30px;
-            height:30px;
+            width: 45px;
+            height:45px;
           background: url('images/wheel.png');
-          background-size: 20px 20px;
+          background-size: 45px 45px;
           background-repeat: no-repeat;
           position:absolute;
+          bottom:18px;
+          left:22px;
+          animation:tier1 .6s linear infinite;
         }
         .tier2{
-            width: 30px;
-            height:30px;
+            width: 45px;
+            height:45px;
           background: url('images/wheel.png');
-          background-size: 20px 20px;
+          background-size: 45px 45px;
           background-repeat: no-repeat;
           position:absolute;
+          bottom:18px;
+          left:174px;
+          animation:tier2  linear .6s infinite;
         }
+        @keyframes tier1{
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+        @keyframes tier2{
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+        
 
         
     
@@ -75,8 +121,15 @@
     <div class="city"> </div>
     <div class="car"> 
         <div class ="tier1"> </div>
-        <div class ="tier1"> </div>
+        <div class ="tier2"> </div>
          </div>
 </div>
+<script>
+    var audio=document.createElement('audio');
+    audio.setAttribute('src','car.mp3');
+    audio.loop=true;
+    //audio.play();
+</script>
 </body>
+
 </html>
