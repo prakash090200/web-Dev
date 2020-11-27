@@ -56,6 +56,7 @@
             text-align:center;
             padding:20px;
         }
+
         button{
             color:white;
             background-color:rgb(24, 224, 24);
@@ -75,7 +76,13 @@
         <p>Prakash</p>
         <p>9652741218</p>
         <div class="mygif"><img src="tenor.gif" alt="running"> </div>
-       <div class="bu"><button >Hello</button></div>
+       <div class="bu"><button onclick="hel()" id="b">Hello</button></div>
     </div>
+    <script>
+        function hel(){
+            console.log("hello");
+            document.getElementById('b').style.border="none";
+        }
+    </script>
 </body>
 </html>
