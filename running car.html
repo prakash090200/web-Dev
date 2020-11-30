@@ -47,6 +47,7 @@
              left:0;
              right:0;
              bottom:24vh;
+             background-repeat: repeat-x;
              animation: city 20s linear infinite;
         }
         @keyframes city{
@@ -110,9 +111,68 @@
                 transform: rotate(360deg);
             }
         }
-        
+        .plane{
+            position:absolute;
+            background:url('images/plane.png');
+            background-size: 261px 100px;
+            width: 262vw;
+            height:120px;
+            background-repeat: no-repeat;
+            top: 30px;
+            left: 75%;
+            
+            animation: planes 2s linear infinite;
+            animation-direction: reverse;
+        }
 
-        
+       
+     
+     @keyframes planes{
+        0%{
+                transform: translateY(-4px);
+            }
+            70%{
+                transform: translateY(4px);
+            }
+            100%{
+                transform: translateY(-4px);
+            }
+     }
+     .cloud1{
+         position:absolute;
+         left:0px;
+         top:80px;
+         background:url('images/c1.png');
+            background-size: 261px 100px;
+            width:261px;
+            height:20vh;
+            background-repeat: no-repeat;
+            animation: cloud1 8s linear infinite;
+
+     }
+     @keyframes cloud1{
+        100%{
+             transform: translateX(100vw);
+         }
+     }
+     .cloud2{
+         position:absolute;
+         left:0px;
+         top:80px;
+         background:url('images/c1.png');
+            background-size: 261px 100px;
+            width:261px;
+            height:20vh;
+            background-repeat: no-repeat;
+            animation: cloud2 8s linear infinite;
+
+     }
+     @keyframes cloud2{
+        100%{
+             transform: translateX(100vw);
+         }
+     }
+   
     
 </style>
 <body>
@@ -122,7 +182,10 @@
     <div class="car"> 
         <div class ="tier1"> </div>
         <div class ="tier2"> </div>
-         </div>
+    </div>
+    <div class="plane"> </div>
+    <div class="cloud1"> </div>
+    <div class="cloud2"> </div>
 </div>
 <script>
     var audio=document.createElement('audio');
