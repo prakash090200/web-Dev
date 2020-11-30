@@ -197,18 +197,17 @@
        width: 60px;
        height: 70px;
        background: url("images/s3.png");
-       background-repeat: no-repeat;
+       
        background-size: 60px 70px;
-       animation: s1 2s linear ;
+       animation: s1 2s linear infinite;
        animation-delay: 3s;
-       animation-play-state: initial;
+       
        
    }
    @keyframes s1{
-       0%{
-           transform: translate(380px,280px);
-       }
+      
        100%{
+        transform: translate(380px,280px);
         opacity: 0.5;
 
        }
