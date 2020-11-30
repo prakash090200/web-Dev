@@ -118,8 +118,8 @@
             width: 262vw;
             height:120px;
             background-repeat: no-repeat;
-            top: 30px;
-            left: 75%;
+            top: 24px;
+            left: 60%;
             
             animation: planes 2s linear infinite;
             animation-direction: reverse;
@@ -141,35 +141,41 @@
      .cloud1{
          position:absolute;
          left:0px;
-         top:80px;
+         top:160px;
          background:url('images/c1.png');
             background-size: 261px 100px;
             width:261px;
             height:20vh;
             background-repeat: no-repeat;
-            animation: cloud1 8s linear infinite;
+            animation: cloud1 10s linear infinite;
 
      }
      @keyframes cloud1{
+         0%{
+             left:0;
+         }
         100%{
-             transform: translateX(100vw);
+             left:99%
          }
      }
      .cloud2{
          position:absolute;
-         left:0px;
-         top:80px;
+         left:-20px;
+         top:70px;
          background:url('images/c1.png');
-            background-size: 261px 100px;
+            background-size: 261px 130px;
             width:261px;
-            height:20vh;
+            height:30vh;
             background-repeat: no-repeat;
             animation: cloud2 8s linear infinite;
 
      }
      @keyframes cloud2{
+        0%{
+             left:20%;
+         }
         100%{
-             transform: translateX(100vw);
+             left:99%
          }
      }
    
