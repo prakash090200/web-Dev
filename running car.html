@@ -26,10 +26,10 @@
         }
         @keyframes sky{
             0%{background-image: url(images/sky.jpg)}
-            25%{
-                background-image: url(images/n2.jpg)
+            30%{
+                background-image: url(images/evening.jpg)
             }
-            50%{
+            65%{
                 background-image: url(images/n2.jpg)
             }
             100%{
@@ -166,10 +166,10 @@
      }
      @keyframes cloud1{
          0%{
-             left:0;
+             left:0;opacity: 0.5;
          }
         100%{
-             left:99%
+             left:99%;opacity: 0.5;
          }
      }
      .cloud2{
@@ -186,10 +186,10 @@
      }
      @keyframes cloud2{
         0%{
-             left:20%;
+             left:20%;opacity: 0.5;
          }
         100%{
-             left:99%
+             left:99%;opacity: 0.5;
          }
      }
    .star1{
@@ -199,14 +199,24 @@
        background: url("images/s3.png");
        
        background-size: 60px 70px;
-       animation: s1 2s linear ;
-       animation-delay: 4s;
+       animation: s1 10s linear infinite;
+       
        
        
    }
    @keyframes s1{
-      
-      
+      0%{
+        opacity: 0;
+      }
+      30%{
+          opacity: 0.5;
+      }
+      65%{
+          opacity: 1;
+      }
+      100%{
+        opacity: 0;
+      }
 
        
    }
