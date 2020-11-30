@@ -21,6 +21,20 @@
             background-size: cover;
             background-repeat: no-repeat;
             position:relative;
+            animation: sky 10s linear infinite;
+
+        }
+        @keyframes sky{
+            0%{background-image: url(images/sky.jpg)}
+            25%{
+                background-image: url(images/n2.jpg)
+            }
+            50%{
+                background-image: url(images/n2.jpg)
+            }
+            100%{
+                background-image: url(images/sky.jpg)
+            }
         }
         .road{
              width:800vw;
@@ -182,17 +196,24 @@
        position:absolute;
        width: 60px;
        height: 70px;
-       background: url("images/s1.png");
+       background: url("images/s3.png");
+       background-repeat: no-repeat;
        background-size: 60px 70px;
-       animation: s1 2s linear infinite;
-       animation-delay: 4s;
-       
+       animation: s1 2s linear ;
+       animation-delay: 3s;
+       animation-play-state: initial;
        
    }
    @keyframes s1{
-       100%{
+       0%{
            transform: translate(380px,280px);
        }
+       100%{
+        opacity: 0.5;
+
+       }
+
+       
    }
     
 </style>
