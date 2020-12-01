@@ -71,10 +71,28 @@
             }
 
         }
+        .city11{
+            width:800vw;
+             height:65vh;
+             position:absolute;
+             background: url('images/g12c.png');
+             background-size: 800px 50vh;
+             left:0;
+             right:0;
+             bottom:24vh;
+             background-repeat: repeat-x;
+             animation: city11 20s linear infinite;
+        }
+        @keyframes city11{
+            100%{
+                transform:translateX(-500vw)
+            }
+
+        }
         .car{
                width:250px;
                height:20vh;
-               background: url('images/car.png');
+               background: url('images/c3.png');
                background-size: 250px 18vh;
                background-repeat: no-repeat;
                position:absolute;
@@ -101,8 +119,8 @@
           background-size: 45px 45px;
           background-repeat: no-repeat;
           position:absolute;
-          bottom:18px;
-          left:22px;
+          bottom:13px;
+          left:36px;
           animation:tier1 .6s linear infinite;
         }
         .tier2{
@@ -112,7 +130,7 @@
           background-size: 45px 45px;
           background-repeat: no-repeat;
           position:absolute;
-          bottom:18px;
+          bottom:14px;
           left:174px;
           animation:tier2  linear .6s infinite;
         }
@@ -264,6 +282,7 @@
 <div class="sky">
     <div class="road"> </div>
     <div class="city"> </div>
+    
     <div class="car"> 
         <div class ="tier1"> </div>
         <div class ="tier2"> </div>
