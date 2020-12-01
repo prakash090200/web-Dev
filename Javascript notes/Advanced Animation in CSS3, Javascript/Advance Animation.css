@@ -1,0 +1,292 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    overflow: hidden;
+}
+.sky{
+    width:100%;
+    height:100vh;
+    background:url('images/n2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    position:relative;
+    animation: sky 10s linear infinite;
+
+}
+@keyframes sky{
+    0%{background-image: url(images/sky.jpg)}
+    30%{
+        background-image: url(images/evening.jpg)
+    }
+    65%{
+        background-image: url(images/n2.jpg)
+    }
+    100%{
+        background-image: url(images/sky.jpg)
+    }
+}
+.road{
+     width:800vw;
+     height:24vh;
+     position:absolute;
+     left:0;
+     right:0;
+     bottom:0;
+     background: url('images/road.jpg');
+     animation:road 2s linear infinite;
+     background-repeat: repeat-x;
+     animation: road 5s linear infinite;
+}
+@keyframes road{
+    100%{
+        transform:translateX(-500vw)
+    }
+}
+.city{
+    width:800vw;
+     height:50vh;
+     position:absolute;
+     background: url('images/g12c.png');
+     background-size: 800px 50vh;
+     left:0;
+     right:0;
+     bottom:24vh;
+     background-repeat: repeat-x;
+     animation: city 20s linear infinite;
+}
+@keyframes city{
+    100%{
+        transform:translateX(-500vw)
+    }
+
+}
+.city11{
+    width:800vw;
+     height:65vh;
+     position:absolute;
+     background: url('images/g12c.png');
+     background-size: 800px 50vh;
+     left:0;
+     right:0;
+     bottom:24vh;
+     background-repeat: repeat-x;
+     animation: city11 20s linear infinite;
+}
+@keyframes city11{
+    100%{
+        transform:translateX(-500vw)
+    }
+
+}
+.car{
+       width:250px;
+       height:20vh;
+       background: url('images/c3.png');
+       background-size: 250px 18vh;
+       background-repeat: no-repeat;
+       position:absolute;
+       bottom:8vh;
+       left:69vh;
+       animation:carshake .4s linear infinite;
+
+}
+@keyframes carshake{
+    0%{
+        transform: translateY(-2px);
+    }
+    50%{
+        transform: translateY(2px);
+    }
+    100%{
+        transform: translateY(-2px);
+    }
+}
+.tier1{
+    width: 45px;
+    height:45px;
+  background: url('images/wheel.png');
+  background-size: 45px 45px;
+  background-repeat: no-repeat;
+  position:absolute;
+  bottom:13px;
+  left:36px;
+  animation:tier1 .6s linear infinite;
+}
+.tier2{
+    width: 45px;
+    height:45px;
+  background: url('images/wheel.png');
+  background-size: 45px 45px;
+  background-repeat: no-repeat;
+  position:absolute;
+  bottom:14px;
+  left:174px;
+  animation:tier2  linear .6s infinite;
+}
+@keyframes tier1{
+    100%{
+        transform: rotate(360deg);
+    }
+}
+@keyframes tier2{
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.plane{
+    position:absolute;
+    background:url('images/plane.png');
+    background-size: 261px 100px;
+    width: 262vw;
+    height:120px;
+    background-repeat: no-repeat;
+    top: 24px;
+    left: 60%;
+    
+    animation: planes 2s linear infinite;
+    animation-direction: reverse;
+}
+
+
+
+@keyframes planes{
+0%{
+        transform: translateY(-4px);
+    }
+    70%{
+        transform: translateY(4px);
+    }
+    100%{
+        transform: translateY(-4px);
+    }
+}
+.cloud1{
+ position:absolute;
+ left:0px;
+ top:2px;
+ background:url('images/c1.png');
+    background-size: 270px 100px;
+    width:270px;
+    height:20vh;
+    background-repeat: no-repeat;
+    animation: cloud1 10s linear infinite;
+
+}
+@keyframes cloud1{
+ 0%{
+     left:0;opacity: 0.5;
+ }
+100%{
+     left:99%;opacity: 0.5;
+ }
+}
+.cloud2{
+ position:absolute;
+ left:-20px;
+ top:70px;
+ background:url('images/c1.png');
+    background-size: 261px 130px;
+    width:261px;
+    height:30vh;
+    background-repeat: no-repeat;
+    animation: cloud2 8s linear infinite;
+
+}
+@keyframes cloud2{
+0%{
+     left:20%;opacity: 0.5;
+ }
+100%{
+     left:99%;opacity: 0.5;
+ }
+}
+
+/* Stars ************************/
+.star1{
+position:absolute;
+width: 60px;
+height: 70px;
+left:15px;
+top:20px;
+background: url("images/s3.png");
+background-size: 60px 70px;
+animation: s1 10s linear infinite;
+}
+@keyframes s1{
+0%{opacity: 0;}
+30%{opacity: 0.4;}
+65%{opacity: 1;}
+100%{opacity: 0;}
+}
+.star2{
+position:absolute;
+width: 60px;
+height: 70px;
+left: 770px;
+top: 10px;
+background: url("images/s3.png");
+background-size: 60px 70px;
+animation: s2 10s linear infinite;
+}
+@keyframes s2{
+0%{opacity: 0;}
+30%{opacity: 0.4;}
+65%{opacity: 1;}
+100%{opacity: 0;}
+}
+.star3{
+position:absolute;
+width: 60px;
+height: 70px;
+left: 1200px;
+top: 80px;
+background: url("images/s3.png");
+background-size: 60px 70px;
+animation: s3 10s linear infinite;
+}
+@keyframes s3{
+0%{opacity: 0;}
+30%{opacity: 0.4;}
+65%{opacity: 1;}
+100%{opacity: 0;}
+}
+.light2{
+position: absolute;
+left: 53%;
+bottom:8vh;
+width:80px;
+height:120px;
+background: url('images/y111.png');
+background-repeat: no-repeat;
+background-size: 60px 120px;
+transform:rotate(-90deg) skewY(0deg);
+
+animation:light 10s linear infinite;
+z-index: 1;
+}
+@keyframes light{
+0%{opacity: 0;}
+30%{opacity: 0.1;}
+55%{opacity: 1;}
+75%{opacity: 0}
+100%{opacity: 0;}
+}
+.star4{
+position:absolute;
+width: 60px;
+height: 70px;
+left: 368px;
+top: 101px;
+background: url("images/s3.png");
+background-size: 60px 70px;
+animation: s4 10s linear infinite;
+}
+@keyframes s4{
+0%{opacity: 0;}
+30%{opacity: 0.4;}
+65%{opacity: 1;}
+100%{opacity: 0;}
+}
