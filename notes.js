@@ -24,7 +24,7 @@ function perform() {
         notearray = JSON.parse([items]);
         if(validate(doc)){
             notearray.push([doc]);
-            show("success","You book is added to our library succesfully");
+            show("success","You item is added to our magical notes succesfully");
             }
             else {
                 show("danger","Please Enter the details before adding");
